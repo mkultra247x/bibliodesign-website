@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= typeof pageTitle !== 'undefined' ? pageTitle + ' | ' : '' %><%= content.siteName %></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAF7F2',
+            espresso: '#2C2118',
+            sage: '#8B9D83',
+            terracotta: '#C4846C',
+            gold: '#C9A962',
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(135deg, #2C2118 0%, #C4846C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .book-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232C2118' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .smooth-scroll { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-cream text-espresso font-sans antialiased smooth-scroll">
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 bg-cream/95 backdrop-blur-sm border-b border-espresso/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a href="/" class="font-serif text-2xl font-semibold tracking-wide"><%= content.siteName %></a>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/" class="text-sm font-medium hover:text-terracotta transition-colors">Home</a>
+          <a href="/about" class="text-sm font-medium hover:text-terracotta transition-colors">About</a>
+          <a href="/services" class="text-sm font-medium hover:text-terracotta transition-colors">Services</a>
+          <a href="/process" class="text-sm font-medium hover:text-terracotta transition-colors">Process</a>
+          <a href="/portfolio" class="text-sm font-medium hover:text-terracotta transition-colors">Portfolio</a>
+          <a href="/contact" class="px-5 py-2.5 bg-espresso text-cream text-sm font-medium rounded-full hover:bg-terracotta transition-colors">Contact</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-espresso/10">
+      <div class="px-6 py-4 space-y-3">
+        <a href="/" class="block py-2 text-sm font-medium">Home</a>
+        <a href="/about" class="block py-2 text-sm font-medium">About</a>
+        <a href="/services" class="block py-2 text-sm font-medium">Services</a>
+        <a href="/process" class="block py-2 text-sm font-medium">Process</a>
+        <a href="/portfolio" class="block py-2 text-sm font-medium">Portfolio</a>
+        <a href="/contact" class="block py-2 text-sm font-medium text-terracotta">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-20">

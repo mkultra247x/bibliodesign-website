@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Alexandra Reeves",
+    "role": "Founder & Lead Curator",
+    "bio": "Former rare books librarian at the Morgan Library. Alexandra combines her encyclopedic knowledge of literature with an eye for design honed through years of collecting first editions.",
+    "photo": ""
+  },
+  {
+    "id": 2,
+    "name": "David Park",
+    "role": "Interior Design Director",
+    "bio": "Award-winning interior designer with features in Architectural Digest and Elle Decor. David ensures every book collection integrates seamlessly with its surroundings.",
+    "photo": ""
+  },
+  {
+    "id": 3,
+    "name": "Priya Sharma",
+    "role": "Senior Book Curator",
+    "bio": "PhD in Comparative Literature from Columbia. Priya specializes in international literature and contemporary fiction, bringing global perspectives to every collection.",
+    "photo": ""
+  }
+]

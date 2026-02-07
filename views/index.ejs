@@ -1,0 +1,174 @@
+<%- include('partials/header') %>
+
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center book-pattern">
+  <div class="absolute inset-0 bg-gradient-to-br from-cream via-cream to-sage/20"></div>
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-24">
+    <div class="max-w-3xl">
+      <span class="inline-block px-4 py-2 rounded-full bg-espresso/5 text-sm font-medium text-espresso/70 mb-6">
+        Book Curation & Interior Design
+      </span>
+      <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-6">
+        <%= content.heroTitle %>
+      </h1>
+      <p class="text-lg md:text-xl text-espresso/70 leading-relaxed mb-10 max-w-2xl">
+        <%= content.heroSubtitle %>
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-espresso text-cream font-medium rounded-full hover:bg-terracotta transition-all transform hover:scale-105">
+          <%= content.heroButton %>
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+        <a href="/process" class="inline-flex items-center justify-center px-8 py-4 border-2 border-espresso/20 text-espresso font-medium rounded-full hover:border-espresso/40 transition-colors">
+          See How It Works
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Decorative Books -->
+  <div class="hidden lg:block absolute right-12 top-1/2 -translate-y-1/2">
+    <div class="flex gap-2 transform rotate-6">
+      <div class="w-8 h-48 bg-terracotta/80 rounded-sm shadow-lg"></div>
+      <div class="w-10 h-52 bg-sage/80 rounded-sm shadow-lg"></div>
+      <div class="w-6 h-44 bg-gold/80 rounded-sm shadow-lg"></div>
+      <div class="w-9 h-50 bg-espresso/60 rounded-sm shadow-lg"></div>
+      <div class="w-7 h-46 bg-terracotta/60 rounded-sm shadow-lg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Preview -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="text-terracotta font-medium text-sm tracking-widest uppercase">What We Do</span>
+      <h2 class="font-serif text-4xl md:text-5xl font-semibold mt-3">Curated for Your Space</h2>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="group p-8 rounded-2xl bg-cream hover:bg-espresso transition-all duration-300">
+        <div class="w-14 h-14 rounded-xl bg-espresso/10 group-hover:bg-cream/10 flex items-center justify-center mb-6 transition-colors">
+          <svg class="w-7 h-7 text-espresso group-hover:text-cream transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+          </svg>
+        </div>
+        <h3 class="font-serif text-2xl font-semibold mb-3 group-hover:text-cream transition-colors">Home Visit</h3>
+        <p class="text-espresso/60 group-hover:text-cream/70 transition-colors">We visit your space to understand its unique character, lighting, and aesthetic potential.</p>
+      </div>
+
+      <div class="group p-8 rounded-2xl bg-cream hover:bg-espresso transition-all duration-300">
+        <div class="w-14 h-14 rounded-xl bg-espresso/10 group-hover:bg-cream/10 flex items-center justify-center mb-6 transition-colors">
+          <svg class="w-7 h-7 text-espresso group-hover:text-cream transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+        </div>
+        <h3 class="font-serif text-2xl font-semibold mb-3 group-hover:text-cream transition-colors">Expert Curation</h3>
+        <p class="text-espresso/60 group-hover:text-cream/70 transition-colors">Our team hand-selects books that match your interests and complement your interior design.</p>
+      </div>
+
+      <div class="group p-8 rounded-2xl bg-cream hover:bg-espresso transition-all duration-300">
+        <div class="w-14 h-14 rounded-xl bg-espresso/10 group-hover:bg-cream/10 flex items-center justify-center mb-6 transition-colors">
+          <svg class="w-7 h-7 text-espresso group-hover:text-cream transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+          </svg>
+        </div>
+        <h3 class="font-serif text-2xl font-semibold mb-3 group-hover:text-cream transition-colors">Styled Delivery</h3>
+        <p class="text-espresso/60 group-hover:text-cream/70 transition-colors">We deliver and artfully arrange your collection, transforming your space instantly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Preview -->
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1">
+        <span class="text-terracotta font-medium text-sm tracking-widest uppercase">About Us</span>
+        <h2 class="font-serif text-4xl md:text-5xl font-semibold mt-3 mb-6">Where Literature Meets Design</h2>
+        <p class="text-lg text-espresso/70 leading-relaxed mb-8">
+          <%= content.aboutShort %>
+        </p>
+        <a href="/about" class="inline-flex items-center text-espresso font-medium hover:text-terracotta transition-colors">
+          Learn More About Us
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gradient-to-br from-sage/30 to-terracotta/30 rounded-3xl blur-2xl"></div>
+          <div class="relative bg-white p-8 rounded-2xl shadow-xl">
+            <div class="grid grid-cols-3 gap-4">
+              <div class="text-center">
+                <div class="font-serif text-4xl font-bold text-espresso">500+</div>
+                <div class="text-sm text-espresso/60 mt-1">Libraries Created</div>
+              </div>
+              <div class="text-center">
+                <div class="font-serif text-4xl font-bold text-espresso">50K+</div>
+                <div class="text-sm text-espresso/60 mt-1">Books Placed</div>
+              </div>
+              <div class="text-center">
+                <div class="font-serif text-4xl font-bold text-espresso">98%</div>
+                <div class="text-sm text-espresso/60 mt-1">Client Satisfaction</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-24 bg-espresso text-cream">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <span class="text-terracotta font-medium text-sm tracking-widest uppercase">Testimonials</span>
+      <h2 class="font-serif text-4xl md:text-5xl font-semibold mt-3">What Clients Say</h2>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <% if (testimonials && testimonials.length) { %>
+        <% testimonials.forEach(function(t) { %>
+        <div class="bg-cream/5 rounded-2xl p-8 backdrop-blur-sm border border-cream/10">
+          <div class="flex mb-4">
+            <% for (let i = 0; i < 5; i++) { %>
+            <svg class="w-5 h-5 <%= i < t.rating ? 'text-gold' : 'text-cream/20' %>" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+            </svg>
+            <% } %>
+          </div>
+          <p class="text-cream/80 leading-relaxed mb-6">"<%= t.text %>"</p>
+          <div>
+            <div class="font-semibold"><%= t.name %></div>
+            <div class="text-sm text-cream/50"><%= t.role %></div>
+          </div>
+        </div>
+        <% }); %>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-24">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+    <h2 class="font-serif text-4xl md:text-5xl font-semibold mb-6">Ready to Transform Your Space?</h2>
+    <p class="text-lg text-espresso/70 mb-10 max-w-2xl mx-auto">
+      Book a complimentary consultation and discover how the perfect book collection can elevate your home.
+    </p>
+    <a href="/contact" class="inline-flex items-center justify-center px-10 py-4 bg-espresso text-cream font-medium rounded-full hover:bg-terracotta transition-all transform hover:scale-105">
+      Schedule Your Consultation
+      <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

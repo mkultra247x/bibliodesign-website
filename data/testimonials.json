@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah Mitchell",
+    "role": "Interior Designer",
+    "text": "BiblioDesign transformed my client's sterile living room into a warm, intellectual haven. The books they selected not only look stunning but have become genuine conversation starters at every gathering.",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "James & Elena Rodriguez",
+    "role": "Homeowners, Brooklyn Heights",
+    "text": "We were skeptical about letting someone else choose our books, but the team understood our taste better than we knew ourselves. Our library is now the heart of our home.",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "name": "Michael Chen",
+    "role": "Architect",
+    "text": "I recommend BiblioDesign to all my clients. They understand that books are architectural elements—adding depth, color, and soul to any space.",
+    "rating": 5
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Manhattan Penthouse Library",
+    "description": "A 500-book collection spanning art history, architecture, and modern fiction for a minimalist Upper East Side penthouse. Custom walnut shelving, organized by color gradient.",
+    "location": "New York, NY",
+    "books": 500,
+    "image": ""
+  },
+  {
+    "id": 2,
+    "title": "Hamptons Beach House",
+    "description": "Coastal-inspired collection featuring maritime history, photography books, and light literary fiction. Weathered covers and blue spines complement the ocean views.",
+    "location": "Southampton, NY",
+    "books": 200,
+    "image": ""
+  },
+  {
+    "id": 3,
+    "title": "Brooklyn Brownstone",
+    "description": "An eclectic mix of vintage cookbooks, poetry, and contemporary design books for a young creative couple. Floor-to-ceiling shelving in a restored 1890s parlor room.",
+    "location": "Brooklyn, NY",
+    "books": 350,
+    "image": ""
+  }
+]

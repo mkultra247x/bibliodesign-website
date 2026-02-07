@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Home Assessment",
+    "description": "Our design experts visit your home for a comprehensive evaluation of your space, lighting, color palette, and existing décor to understand the perfect book aesthetic for your environment.",
+    "icon": "home",
+    "price": "Complimentary"
+  },
+  {
+    "id": 2,
+    "title": "Personal Consultation",
+    "description": "We spend time understanding your interests, reading preferences, intellectual curiosities, and lifestyle to curate books that resonate with who you are.",
+    "icon": "chat",
+    "price": "Included"
+  },
+  {
+    "id": 3,
+    "title": "Essential Collection",
+    "description": "Perfect for accent shelving or small spaces. Receive 15-25 hand-selected books that complement your interior and spark curiosity.",
+    "icon": "books",
+    "price": "From $1,200"
+  },
+  {
+    "id": 4,
+    "title": "Statement Library",
+    "description": "Transform an entire room or wall with 50-100 curated volumes. Includes design-forward arrangement and custom organizational system.",
+    "icon": "library",
+    "price": "From $3,500"
+  },
+  {
+    "id": 5,
+    "title": "Estate Collection",
+    "description": "For grand homes and serious bibliophiles. Comprehensive multi-room libraries with rare editions, first printings, and museum-quality presentation.",
+    "icon": "crown",
+    "price": "From $15,000"
+  },
+  {
+    "id": 6,
+    "title": "Seasonal Refresh",
+    "description": "Keep your collection evolving. Quarterly visits to rotate displays, add new releases, and ensure your library stays fresh and relevant.",
+    "icon": "refresh",
+    "price": "$450/quarter"
+  }
+]

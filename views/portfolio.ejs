@@ -1,0 +1,93 @@
+<% const pageTitle = 'Portfolio'; %>
+<%- include('partials/header') %>
+
+<!-- Hero -->
+<section class="py-24 bg-gradient-to-br from-cream to-sage/20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <span class="text-terracotta font-medium text-sm tracking-widest uppercase">Our Work</span>
+      <h1 class="font-serif text-5xl md:text-6xl font-semibold mt-3 mb-6">Portfolio</h1>
+      <p class="text-xl text-espresso/70 leading-relaxed">Explore some of the libraries we've created for clients across the country.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Grid -->
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <% if (projects && projects.length) { %>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <% projects.forEach(function(project) { %>
+      <div class="group">
+        <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-sage/30 to-terracotta/30">
+          <% if (project.image) { %>
+          <img src="<%= project.image %>" alt="<%= project.title %>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <% } else { %>
+          <div class="w-full h-full flex items-center justify-center">
+            <svg class="w-20 h-20 text-espresso/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <% } %>
+        </div>
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="font-serif text-2xl font-semibold mb-1"><%= project.title %></h3>
+            <div class="text-terracotta text-sm font-medium"><%= project.location %></div>
+          </div>
+          <div class="text-right">
+            <div class="font-serif text-2xl font-bold text-espresso/40"><%= project.books %></div>
+            <div class="text-xs text-espresso/40">books</div>
+          </div>
+        </div>
+        <p class="text-espresso/60 mt-3 leading-relaxed"><%= project.description %></p>
+      </div>
+      <% }); %>
+    </div>
+    <% } else { %>
+    <div class="text-center py-16">
+      <svg class="w-16 h-16 text-espresso/20 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+      </svg>
+      <p class="text-espresso/60">Portfolio projects coming soon.</p>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="py-24 bg-espresso text-cream">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid md:grid-cols-4 gap-8 text-center">
+      <div>
+        <div class="font-serif text-5xl font-bold mb-2">500+</div>
+        <div class="text-cream/60">Libraries Created</div>
+      </div>
+      <div>
+        <div class="font-serif text-5xl font-bold mb-2">50K+</div>
+        <div class="text-cream/60">Books Curated</div>
+      </div>
+      <div>
+        <div class="font-serif text-5xl font-bold mb-2">48</div>
+        <div class="text-cream/60">States Served</div>
+      </div>
+      <div>
+        <div class="font-serif text-5xl font-bold mb-2">15</div>
+        <div class="text-cream/60">Years Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+    <h2 class="font-serif text-4xl md:text-5xl font-semibold mb-6">Your Library Could Be Next</h2>
+    <p class="text-lg text-espresso/70 mb-10">Let's create something beautiful together.</p>
+    <a href="/contact" class="inline-flex items-center justify-center px-10 py-4 bg-espresso text-cream font-medium rounded-full hover:bg-terracotta transition-all">
+      Start Your Project
+    </a>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

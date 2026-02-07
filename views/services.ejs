@@ -1,0 +1,132 @@
+<% const pageTitle = 'Services'; %>
+<%- include('partials/header') %>
+
+<!-- Hero -->
+<section class="py-24 bg-gradient-to-br from-cream to-terracotta/10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <span class="text-terracotta font-medium text-sm tracking-widest uppercase">Our Services</span>
+      <h1 class="font-serif text-5xl md:text-6xl font-semibold mt-3 mb-6">Tailored Book Curation</h1>
+      <p class="text-xl text-espresso/70 leading-relaxed">From single-shelf accents to full home libraries, we offer services designed to transform any space into a literary haven.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Services Grid -->
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <% if (services && services.length) { %>
+        <% services.forEach(function(service, index) { %>
+        <div class="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-espresso/5">
+          <% if (index < 2) { %>
+          <span class="absolute top-6 right-6 text-xs font-medium px-3 py-1 bg-sage/20 text-sage rounded-full"><%= service.price %></span>
+          <% } else { %>
+          <span class="absolute top-6 right-6 text-xs font-medium px-3 py-1 bg-terracotta/10 text-terracotta rounded-full"><%= service.price %></span>
+          <% } %>
+          
+          <div class="w-14 h-14 rounded-xl bg-espresso/5 flex items-center justify-center mb-6">
+            <% if (service.icon === 'home') { %>
+            <svg class="w-7 h-7 text-espresso" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+            <% } else if (service.icon === 'chat') { %>
+            <svg class="w-7 h-7 text-espresso" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+            <% } else if (service.icon === 'books') { %>
+            <svg class="w-7 h-7 text-espresso" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+            <% } else if (service.icon === 'library') { %>
+            <svg class="w-7 h-7 text-espresso" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+            </svg>
+            <% } else if (service.icon === 'crown') { %>
+            <svg class="w-7 h-7 text-espresso" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3l3.5 7L12 6l3.5 4L19 3m-14 7v11h14V10"></path>
+            </svg>
+            <% } else if (service.icon === 'refresh') { %>
+            <svg class="w-7 h-7 text-espresso" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+            </svg>
+            <% } else { %>
+            <svg class="w-7 h-7 text-espresso" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+            </svg>
+            <% } %>
+          </div>
+          
+          <h3 class="font-serif text-2xl font-semibold mb-4"><%= service.title %></h3>
+          <p class="text-espresso/60 leading-relaxed"><%= service.description %></p>
+        </div>
+        <% }); %>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="py-24 bg-espresso text-cream">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="font-serif text-4xl md:text-5xl font-semibold">What's Included</h2>
+      <p class="text-cream/60 mt-4 max-w-2xl mx-auto">Every service package includes our signature attention to detail and white-glove treatment.</p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-full bg-cream/10 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+        <h3 class="font-semibold mb-2">Expert Sourcing</h3>
+        <p class="text-cream/60 text-sm">Access to rare bookshops, auctions, and private collections worldwide.</p>
+      </div>
+      
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-full bg-cream/10 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+          </svg>
+        </div>
+        <h3 class="font-semibold mb-2">White-Glove Delivery</h3>
+        <p class="text-cream/60 text-sm">Careful transportation and unpacking of every volume.</p>
+      </div>
+      
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-full bg-cream/10 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+          </svg>
+        </div>
+        <h3 class="font-semibold mb-2">Professional Styling</h3>
+        <p class="text-cream/60 text-sm">Artful arrangement by our interior design team.</p>
+      </div>
+      
+      <div class="text-center">
+        <div class="w-16 h-16 rounded-full bg-cream/10 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          </svg>
+        </div>
+        <h3 class="font-semibold mb-2">Satisfaction Guarantee</h3>
+        <p class="text-cream/60 text-sm">Not in love? We'll swap any book within 30 days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+    <h2 class="font-serif text-4xl md:text-5xl font-semibold mb-6">Not Sure Which Service You Need?</h2>
+    <p class="text-lg text-espresso/70 mb-10">Book a free consultation and we'll help you find the perfect solution for your space and budget.</p>
+    <a href="/contact" class="inline-flex items-center justify-center px-10 py-4 bg-espresso text-cream font-medium rounded-full hover:bg-terracotta transition-all">
+      Get Started
+    </a>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

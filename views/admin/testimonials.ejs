@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials | BiblioDesign CMS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-50 font-['Inter']">
+  <!-- Sidebar -->
+  <div class="fixed left-0 top-0 h-full w-64 bg-gray-900 text-white p-6">
+    <div class="text-xl font-semibold mb-8">BiblioDesign CMS</div>
+    <nav class="space-y-2">
+      <a href="/admin" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">Dashboard</a>
+      <a href="/admin/content" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">Site Content</a>
+      <a href="/admin/testimonials" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-800">Testimonials</a>
+      <a href="/admin/portfolio" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">Portfolio</a>
+      <a href="/admin/team" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">Team</a>
+      <a href="/admin/inquiries" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">Inquiries</a>
+    </nav>
+    <div class="absolute bottom-6 left-6">
+      <a href="/" class="text-gray-400 hover:text-white text-sm">View Site</a>
+      <span class="mx-2 text-gray-600">|</span>
+      <a href="/admin/logout" class="text-gray-400 hover:text-white text-sm">Logout</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="ml-64 p-8">
+    <div class="mb-8">
+      <h1 class="text-2xl font-bold text-gray-900">Testimonials</h1>
+      <p class="text-gray-500 mt-1">Manage client testimonials</p>
+    </div>
+    
+    <!-- Add New -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-8">
+      <h2 class="text-lg font-semibold mb-6">Add New Testimonial</h2>
+      <form action="/admin/testimonials" method="POST" class="space-y-4">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+            <input type="text" name="name" required
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Role / Title</label>
+            <input type="text" name="role" placeholder="e.g., Homeowner, Brooklyn Heights"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Testimonial Text</label>
+          <textarea name="text" rows="3" required
+            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"></textarea>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Rating</label>
+          <select name="rating" class="px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+            <option value="5">5 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="3">3 Stars</option>
+          </select>
+        </div>
+        <button type="submit" class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+          Add Testimonial
+        </button>
+      </form>
+    </div>
+    
+    <!-- List -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+      <div class="p-6 border-b border-gray-100">
+        <h2 class="text-lg font-semibold">Existing Testimonials</h2>
+      </div>
+      <% if (testimonials && testimonials.length) { %>
+      <div class="divide-y divide-gray-100">
+        <% testimonials.forEach(function(t) { %>
+        <div class="p-6 flex justify-between items-start">
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="font-medium"><%= t.name %></span>
+              <span class="text-gray-400">|</span>
+              <span class="text-sm text-gray-500"><%= t.role %></span>
+              <span class="text-yellow-500 text-sm">
+                <% for (let i = 0; i < t.rating; i++) { %>★<% } %>
+              </span>
+            </div>
+            <p class="text-gray-600">"<%= t.text %>"</p>
+          </div>
+          <form action="/admin/testimonials/delete/<%= t.id %>" method="POST" onsubmit="return confirm('Delete this testimonial?')">
+            <button type="submit" class="text-red-500 hover:text-red-700 text-sm">Delete</button>
+          </form>
+        </div>
+        <% }); %>
+      </div>
+      <% } else { %>
+      <div class="p-6 text-center text-gray-400">No testimonials yet</div>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inquiries | BiblioDesign CMS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-50 font-['Inter']">
+  <!-- Sidebar -->
+  <div class="fixed left-0 top-0 h-full w-64 bg-gray-900 text-white p-6">
+    <div class="text-xl font-semibold mb-8">BiblioDesign CMS</div>
+    <nav class="space-y-2">
+      <a href="/admin" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">Dashboard</a>
+      <a href="/admin/content" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">Site Content</a>
+      <a href="/admin/testimonials" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">Testimonials</a>
+      <a href="/admin/portfolio" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">Portfolio</a>
+      <a href="/admin/team" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">Team</a>
+      <a href="/admin/inquiries" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-800">
+        Inquiries
+        <% if (inquiries && inquiries.length) { %>
+        <span class="ml-auto bg-blue-500 text-xs px-2 py-0.5 rounded-full"><%= inquiries.length %></span>
+        <% } %>
+      </a>
+    </nav>
+    <div class="absolute bottom-6 left-6">
+      <a href="/" class="text-gray-400 hover:text-white text-sm">View Site</a>
+      <span class="mx-2 text-gray-600">|</span>
+      <a href="/admin/logout" class="text-gray-400 hover:text-white text-sm">Logout</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="ml-64 p-8">
+    <div class="mb-8">
+      <h1 class="text-2xl font-bold text-gray-900">Inquiries</h1>
+      <p class="text-gray-500 mt-1">Contact form submissions</p>
+    </div>
+    
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+      <% if (inquiries && inquiries.length) { %>
+      <div class="divide-y divide-gray-100">
+        <% inquiries.slice().reverse().forEach(function(inq) { %>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <div class="font-medium text-lg"><%= inq.name %></div>
+              <div class="text-sm text-gray-500 flex gap-4 mt-1">
+                <span><%= inq.email %></span>
+                <% if (inq.phone) { %><span><%= inq.phone %></span><% } %>
+                <% if (inq.location) { %><span><%= inq.location %></span><% } %>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-sm text-gray-400"><%= new Date(inq.date).toLocaleDateString() %> at <%= new Date(inq.date).toLocaleTimeString() %></span>
+              <form action="/admin/inquiries/delete/<%= inq.id %>" method="POST" onsubmit="return confirm('Delete this inquiry?')">
+                <button type="submit" class="text-red-500 hover:text-red-700 text-sm">Delete</button>
+              </form>
+            </div>
+          </div>
+          
+          <div class="flex gap-4 mb-4">
+            <% if (inq.service) { %>
+            <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full"><%= inq.service %></span>
+            <% } %>
+            <% if (inq.budget) { %>
+            <span class="px-3 py-1 bg-green-50 text-green-700 text-sm rounded-full"><%= inq.budget %></span>
+            <% } %>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg p-4">
+            <div class="text-sm text-gray-500 mb-2">Message:</div>
+            <p class="text-gray-700 whitespace-pre-wrap"><%= inq.message %></p>
+          </div>
+          
+          <div class="mt-4 flex gap-3">
+            <a href="mailto:<%= inq.email %>?subject=Re: BiblioDesign Inquiry" 
+              class="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
+              Reply via Email
+            </a>
+            <% if (inq.phone) { %>
+            <a href="tel:<%= inq.phone %>" 
+              class="px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors">
+              Call
+            </a>
+            <% } %>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+      <% } else { %>
+      <div class="p-12 text-center">
+        <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+        <p class="text-gray-400">No inquiries yet</p>
+        <p class="text-gray-400 text-sm mt-1">When someone fills out your contact form, their message will appear here.</p>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>
